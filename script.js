@@ -33,3 +33,24 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+
+// ==========================================================================
+// Chatbot Logic
+// ==========================================================================
+const chatbotToggler = document.getElementById('chatbot-toggler');
+const chatbotContainer = document.getElementById('chatbot-container');
+const chatIcon = document.querySelector('.chat-icon');
+const closeIcon = document.querySelector('.close-icon');
+
+chatbotToggler.addEventListener('click', () => {
+    chatbotContainer.classList.toggle('active');
+    
+    // Toggle icons
+    if (chatbotContainer.classList.contains('active')) {
+        chatIcon.style.display = 'none';
+        closeIcon.style.display = 'block';
+    } else {
+        chatIcon.style.display = 'block';
+        closeIcon.style.display = 'none';
+    }
+});
